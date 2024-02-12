@@ -1,7 +1,7 @@
-import { useCallback } from 'react';
-import { useRouter } from 'next/router';
-import stringify from 'qs-stringify';
-export const RETURN_HREF_QUERY_PARAM = '_UCR_return_href';
+import { useCallback } from "react";
+import { useRouter } from "next/router";
+import stringify from "qs-stringify";
+export const RETURN_HREF_QUERY_PARAM = "_UCR_return_href";
 
 /**
  * During contextual routing browser URL will be controlled by Next Router's "as" prop
@@ -18,7 +18,7 @@ export function useContextualRouting(): {
 } {
   const router = useRouter();
   const returnHrefQueryParam =
-    typeof router.query[RETURN_HREF_QUERY_PARAM] === 'string'
+    typeof router.query[RETURN_HREF_QUERY_PARAM] === "string"
       ? router.query[RETURN_HREF_QUERY_PARAM]
       : undefined;
   const watchedQuery = Object.assign({}, router.query);
@@ -35,7 +35,7 @@ export function useContextualRouting(): {
   const makeContextualHref = useCallback(
     (extraParams?: Record<string, string | number>) =>
       router.pathname +
-      '?' +
+      "?" +
       stringify(
         Object.assign({}, router.query, extraParams, {
           [RETURN_HREF_QUERY_PARAM]: returnHref,

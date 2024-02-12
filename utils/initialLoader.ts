@@ -149,4 +149,4 @@ export default `
             background-color: transparent;
         }
     }
-`
+`;

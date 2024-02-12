@@ -4,20 +4,20 @@ const nextConfig = {
   swcMinify: true,
   images: {
     remotePatterns: [
-        {
-            protocol: 'https',
-            hostname: 'lh3.googleusercontent.com'
-        },
-        {
-            protocol: 'https',
-            hostname: 'firebasestorage.googleapis.com'
-        },
-        {
-            protocol: 'https',
-            hostname: 'pbs.twimg.com'
-        }
-    ]
-  }
-}
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "firebasestorage.googleapis.com",
+      },
+      {
+        protocol: "https",
+        hostname: "pbs.twimg.com",
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -1,136 +1,139 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 .mNavBtn {
-    @apply h-7 md:hidden 
+  @apply h-7 md:hidden 
     cursor-pointer;
 }
 
 /* Wrapper to center tooltip */
 .dNavWrapper {
-    @apply hidden md:inline-flex !mx-1;
+  @apply hidden md:inline-flex !mx-1;
 }
 
 .dNavBtn {
-    @apply h-10 w-10 flex items-center justify-center cursor-pointer
+  @apply h-10 w-10 flex items-center justify-center cursor-pointer
     bg-transparent ml-0 hover:bg-gray-100 rounded-full;
 }
 
 .dNavIcon {
-    @apply relative group-hover:w-7 group-hover:h-7
+  @apply relative group-hover:w-7 group-hover:h-7
     transition-all duration-75 ease-in-out;
 }
 
 .reactBtn {
-    @apply cursor-pointer hover:text-gray-400 transition-all duration-150 ease-out;
+  @apply cursor-pointer hover:text-gray-400 transition-all duration-150 ease-out;
 }
 
 .reactBtnIcon {
-    @apply w-8 h-8
+  @apply w-8 h-8;
 }
 
 .mBottomNavIcon {
-    @apply h-8 w-8
+  @apply h-8 w-8;
 }
 
 .profileTabLink {
-    @apply flex items-center grow sm:grow-0 sm:mx-8 py-4 border-b-[2px]
-    focus:outline-none tracking-[2px] justify-center font-[600] text-sm
+  @apply flex items-center grow sm:grow-0 sm:mx-8 py-4 border-b-[2px]
+    focus:outline-none tracking-[2px] justify-center font-[600] text-sm;
 }
 
 .profileContentWrapper {
-    @apply bg-white shadow-mainShadow rounded-lg mx-2 md:mx-10
-    py-10 px-3 md:px-8 mt-7 mb-14 md:my-12
+  @apply bg-white shadow-mainShadow rounded-lg mx-2 md:mx-10
+    py-10 px-3 md:px-8 mt-7 mb-14 md:my-12;
 }
 
 .profileContentContainer {
-    @apply flex flex-wrap justify-center md:px-4
-} 
+  @apply flex flex-wrap justify-center md:px-4;
+}
 
 .profileContentContainer > div {
-    @apply basis-[50%] sm:basis-[33.3333%] lg:basis-[25%]
+  @apply basis-[50%] sm:basis-[33.3333%] lg:basis-[25%];
 }
 
 .pageContent {
-    @apply mt-5 md:mt-10 pb-20 md:pb-14
+  @apply mt-5 md:mt-10 pb-20 md:pb-14;
 }
 
 .wordSpace {
-    word-spacing: 2px;
+  word-spacing: 2px;
 }
 
 .editWrapper {
-    @apply flex px-5 md:px-10 md:justify-center mb-8 flex-col md:flex-row
+  @apply flex px-5 md:px-10 md:justify-center mb-8 flex-col md:flex-row;
 }
 
 .editAside {
-    @apply md:basis-2/5 mb-3 md:mb-0 md:mr-10 md:text-right font-bold
+  @apply md:basis-2/5 mb-3 md:mb-0 md:mr-10 md:text-right font-bold;
 }
 
 .editDiv {
-    @apply md:basis-3/5
+  @apply md:basis-3/5;
 }
 
-.editDiv input, .editDiv textarea {
-    @apply border-gray-200 rounded-[4px] focus:ring-instaBlue focus:border-instaBlue
+.editDiv input,
+.editDiv textarea {
+  @apply border-gray-200 rounded-[4px] focus:ring-instaBlue focus:border-instaBlue;
 }
 
 .useScrollbar {
-    @apply scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200
+  @apply scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200;
 }
 
 /* loader styles */
 .lds-ring {
-    display: inline-block;
-    position: relative;
-    width: 30px;
-    height: 30px;
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
 }
 .lds-ring div {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #0095f6 transparent transparent transparent;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #0095f6 transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
-    animation-delay: -0.45s;
+  animation-delay: -0.45s;
 }
 .lds-ring div:nth-child(2) {
-    animation-delay: -0.3s;
+  animation-delay: -0.3s;
 }
 .lds-ring div:nth-child(3) {
-    animation-delay: -0.15s;
+  animation-delay: -0.15s;
 }
 @keyframes lds-ring {
-    0% {
+  0% {
     transform: rotate(0deg);
-    }
-    100% {
+  }
+  100% {
     transform: rotate(360deg);
-    }
+  }
 }
-  
 
 body {
-    background-color: #F1F3F4;
+  background-color: #f1f3f4;
 }
 
 :root {
-    @apply scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200
+  @apply scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200;
 }
 
 :root {
-    font-family: 'Figtree', sans-serif;
-    font-size: 14px;
-    color: #333;
+  font-family: "Figtree", sans-serif;
+  font-size: 14px;
+  color: #333;
 }
 
-html, body, #__next, main {
-    height: 100%;
+html,
+body,
+#__next,
+main {
+  height: 100%;
 }
