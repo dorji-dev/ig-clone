@@ -28,7 +28,7 @@ const InstantSearch = ({
     if (index.uid !== "users") {
       searchClient.createIndex("users");
     }
-  });
+  }).catch(_ => console.log());
 
   //listen to user document changes and update the search collection
   useEffect(
