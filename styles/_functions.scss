@@ -1,0 +1,7 @@
+@function getSum40($first, $second) {
+  @if $first + $second != 40 {
+    @return 40;
+  } @else {
+    @return $first + $second;
+  }
+}

@@ -1,5 +1,6 @@
 import { useSession } from "next-auth/react";
 import { FormEvent, useEffect, useState } from "react";
+import styles from "../styles/post.module.scss";
 import EmojiPicker from "./EmojiPicker";
 import {
   addDoc,
@@ -173,7 +174,7 @@ const Post = ({
   };
 
   return (
-    <div className={`bg-white md:rounded-lg md:shadow-mainShadow relative`}>
+    <div className={styles.post_container}>
       {/* show emoji picker */}
       {showPicker && (
         <EmojiPicker
@@ -184,10 +185,10 @@ const Post = ({
         />
       )}
       {/* Header */}
-      <div className="flex items-center p-2 md:p-3">
+      <div className={styles.post_header}>
         <Link href={`/${username}`}>
           <img
-            className="rounded-full h-10 w-10 object-contain p-1 mr-3 border"
+            className={styles.avatar}
             src={userImage ?? "/images/placeholder.png"}
             alt="user-avatar"
           />
@@ -195,7 +196,7 @@ const Post = ({
         <Link href={`/${username}`} className="font-bold">
           {username}
         </Link>
-        <button className="ml-auto" onClick={() => setPostIdForOptions(postId)}>
+        <button onClick={() => setPostIdForOptions(postId)}>
           <BiDotsHorizontalRounded className="h-8 w-8" />
         </button>
       </div>
@@ -219,7 +220,7 @@ const Post = ({
       {/* bottom section */}
       <section className="pt-5">
         {/* Buttons */}
-        <div className="flex mb-4 justify-between px-5">
+        <div className={styles.action_buttons}>
           <div className="flex space-x-4">
             {/* like button */}
             {hasLiked ? (
@@ -266,18 +267,15 @@ const Post = ({
         </div>
 
         {/* Caption, likes and comments */}
-        <div className="px-5">
-          {likes.length > 0 &&
-            (likes.length === 1 ? (
-              <p className="font-bold mb-2">{likes.length} like</p>
-            ) : (
-              <p className="font-bold mb-2">{likes.length} likes</p>
-            ))}
+        <div className={styles.reactions}>
+          {likes.length > 0 && (
+            <p className={styles.like_count}>
+              {likes.length} {likes.length === 1 ? "like" : "likes"}
+            </p>
+          )}
           {/* caption */}
-          <p className="mb-2">
-            <Link href={`/${username}`} className="font-bold mr-1">
-              {username}
-            </Link>
+          <p className={styles.post_caption}>
+            <Link href={`/${username}`}>{username}</Link>
             {caption}
           </p>
           {commentCount > 0 && (
@@ -304,10 +302,8 @@ const Post = ({
           <div>
             {userComments.length > 0 &&
               userComments.map((comment) => (
-                <p className="mb-2" key={comment.id}>
-                  <span className="font-bold mr-2">
-                    {comment.data().username}
-                  </span>
+                <p className={styles.current_user_comment} key={comment.id}>
+                  <span>{comment.data().username}</span>
                   <span>{comment.data().text}</span>
                 </p>
               ))}
@@ -315,21 +311,20 @@ const Post = ({
         </div>
 
         {/* post timestamp */}
-        <div className="px-5 pb-4 pt-2 wordSpace block uppercase text-[10px] font-[500] text-gray-400">
+        <div className={`text-gray-400 ${styles.post_timestamp}`}>
           <Moment fromNow>{timeStamp?.toDate()}</Moment>
         </div>
 
         {/* Input box */}
         <form
-          className="hidden border-t py-2 md:flex items-center px-5"
+          className={styles.comment_form}
           onSubmit={(e) => postComment(e)}
         >
           <button type="button" onClick={() => setShowPicker(true)}>
             <BsEmojiSmile className="w-6 h-6" />
           </button>
           <input
-            className="flex-1 text-[100%] focus:ring-0 border-none outline-none
-                            placeholder:font-[600] placeholder:text-gray-400"
+            className="flex-1 text-[100%] focus:ring-0 border-none outline-none placeholder:font-[600] placeholder:text-gray-400"
             type="text"
             name="comment"
             placeholder="Add a comment..."

@@ -1,0 +1,95 @@
+@use "./variables";
+@use "./mixins" as *;
+@use "./functions";
+
+%post_item_padding {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.post_container {
+  background-color: white;
+  position: relative;
+  @include tablet {
+    border-radius: 8px;
+    box-shadow: variables.$main-shadow;
+  }
+
+  .post_header {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    @include tablet {
+      padding: 12px;
+    }
+
+    .avatar {
+      border-radius: 999px;
+      height: functions.getSum40(20, 20) * 1px;
+      width: functions.getSum40(20, 20) * 1px;
+      object-fit: contain;
+      padding: 4px;
+      margin-right: 12px;
+      border-width: 1px;
+    }
+
+    button {
+      margin-left: auto;
+    }
+  }
+
+  .action_buttons {
+    @extend %post_item_padding;
+    display: flex;
+    margin-bottom: 16px;
+    justify-content: space-between;
+  }
+
+  .reactions {
+    @extend %post_item_padding;
+
+    .like_count {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .post_caption {
+      margin-bottom: 8px;
+
+      a {
+        font-weight: 700;
+        margin-right: 4px;
+      }
+    }
+
+    .current_user_comment {
+      @extend .post_caption;
+
+      span {
+        font-weight: 700;
+        @extend .post_caption;
+      }
+    }
+  }
+
+  .post_timestamp {
+    @extend %post_item_padding;
+    padding-bottom: 16px;
+    padding-top: 8px;
+    word-spacing: 2px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 500;
+  }
+
+  .comment_form {
+    display: none;
+    @include tablet {
+      display: flex;
+      align-items: center;
+      padding: 8px 20px;
+      border-top-width: 1px;
+    }
+  }
+}

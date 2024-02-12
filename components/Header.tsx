@@ -22,7 +22,7 @@ const Header = () => {
   const { makeContextualHref, returnHref } = useContextualRouting();
 
   return (
-    <div className="shadow-sm border-b bg-white fixed top-0 right-0 left-0 z-50 min-h-[54px] h-[54px] max-h-[54px]">
+    <div className="shadow-sm border-b bg-white fixed top-0 right-0 left-0 z-50 min-h-[54px] h-[64px] max-h-[64px]">
       <div className="flex justify-between h-full items-center mx-6 md:max-w-4xl lg:max-w-6xl md:mx-auto">
         {/* Header left */}
         <div
