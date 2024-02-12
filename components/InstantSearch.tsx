@@ -82,9 +82,9 @@ const InstantSearch = ({
             "block w-full h-[35px] bg-[#e8eaed] border-0 focus:ring-0 focus:outline-0 pl-10 pr-5",
             onSearchPage && "rounded-md"
           )}
-          arai-label="Search"
+          aria-label="Search people"
           defaultValue={query}
-          placeholder="Search"
+          placeholder="Search people"
           onChange={(event) => setQuery(event.target.value)}
           onFocus={() => setActive(true)}
           onBlur={(e) => {

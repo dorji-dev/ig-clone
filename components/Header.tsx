@@ -40,11 +40,7 @@ const Header = () => {
         </div>
         {/* Header middle/search input */}
         {router.pathname !== "/search" && (
-          <div
-            className="relative hidden md:block h-[35px] min-w-[200px]
-                            transition-all ease-in-out duration-100 ml-6 mr-auto 
-                            focus-within:flex-1"
-          >
+          <div className="relative hidden md:block h-[35px] min-w-[200px] transition-all ease-in-out duration-100 ml-6 mr-auto focus-within:flex-1">
             <div className="focus-within:shadow-mainShadow rounded-md overflow-hidden">
               <InstantSearch />
             </div>
@@ -56,13 +52,15 @@ const Header = () => {
           {/* home icon */}
           <div className="dNavWrapper">
             <Tooltip
-              className="mt-[2px]"
-              style="light"
+              id="home"
+              className="mt-[10px]"
+              style="dark"
               content="Home"
               placement="bottom"
               animation="duration-1000"
             >
               <button
+                aria-labelledby="home"
                 className="dNavBtn group"
                 onClick={() => router.push("/")}
               >
@@ -73,13 +71,15 @@ const Header = () => {
           {/* feature icon */}
           <div className="!mx-1">
             <Tooltip
-              className="mt-[2px]"
-              style="light"
+              id="features"
+              className="mt-[10px]"
+              style="dark"
               content="Features"
               placement="bottom"
               animation="duration-1000"
             >
               <button
+                aria-labelledby="features"
                 className="relative dNavBtn group"
                 onClick={() => router.push("/application/features")}
               >
@@ -102,13 +102,15 @@ const Header = () => {
           {/* message icon */}
           <div className="dNavWrapper">
             <Tooltip
-              className="mt-[2px]"
-              style="light"
+              id="messages"
+              className="mt-[10px]"
+              style="dark"
               content="Messages"
               placement="bottom"
               animation="duration-1000"
             >
               <button
+                aria-labelledby="messages"
                 className="relative dNavBtn group"
                 onClick={() => router.push("/direct/inbox")}
               >
@@ -125,13 +127,15 @@ const Header = () => {
           {/* create icon */}
           <div className="dNavWrapper">
             <Tooltip
-              className="mt-[2px]"
-              style="light"
+              id="create"
+              className="mt-[10px]"
+              style="dark"
               content="Create"
               placement="bottom"
               animation="duration-1000"
             >
               <button
+                aria-labelledby="create"
                 className="dNavBtn group"
                 onClick={() => openUploadModal(true)}
               >
@@ -142,13 +146,14 @@ const Header = () => {
           {/* explore icon */}
           <div className="dNavWrapper">
             <Tooltip
-              className="mt-[2px]"
-              style="light"
+              id="explore"
+              className="mt-[10px]"
+              style="dark"
               content="Explore"
               placement="bottom"
               animation="duration-1000"
             >
-              <button className="dNavBtn group">
+              <button aria-labelledby="explore" className="dNavBtn group">
                 <BsPeople className="w-[20px] h-[20px] dNavIcon" />
               </button>
             </Tooltip>
@@ -156,13 +161,15 @@ const Header = () => {
           {/* notification icon */}
           <div className="dNavWrapper">
             <Tooltip
-              className="mt-[2px]"
-              style="light"
+              id="notifications"
+              className="mt-[10px]"
+              style="dark"
               content="Notification"
               placement="bottom"
               animation="duration-1000"
             >
               <button
+                aria-labelledby="notifications"
                 onClick={() =>
                   router.push(
                     makeContextualHref({
@@ -181,22 +188,22 @@ const Header = () => {
           {/* profile link */}
           <div className="dNavWrapper">
             <Tooltip
-              className="mt-[-1.5px]"
-              style="light"
+              id="profile"
+              className="mt-[7px]"
+              style="dark"
               content={`@${session && session.user.username}`}
               placement="bottom"
               animation="duration-1000"
             >
               <button
+                aria-labelledby="profile"
                 onClick={() => router.push(`/${session?.user?.username}`)}
-                className="h-12 w-12 flex items-center justify-center cursor-pointer
-                                        bg-transparent ml-0 hover:bg-gray-100 rounded-full group"
+                className="h-12 w-12 flex items-center justify-center cursor-pointer bg-transparent ml-0 hover:bg-gray-100 rounded-full group"
               >
                 <img
                   src={session?.user?.image as string}
                   alt="avatar"
-                  className="h-10 rounded-full cursor-pointer group-hover:w-[35px] group-hover:h-[35px] relative
-                                            transition-all duration-75 ease-in-out"
+                  className="h-10 rounded-full cursor-pointer group-hover:w-[35px] group-hover:h-[35px] relative transition-all duration-75 ease-in-out"
                 />
               </button>
             </Tooltip>

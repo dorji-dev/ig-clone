@@ -223,17 +223,20 @@ const Post = ({
         <div className={styles.action_buttons}>
           <div className="flex space-x-4">
             {/* like button */}
-            {hasLiked ? (
-              <button onClick={() => postLike()} className="reactBtn">
+            <button
+              aria-label={hasLiked ? "Unlike the post" : "Like the post"}
+              onClick={() => postLike()}
+              className="reactBtn"
+            >
+              {hasLiked ? (
                 <AiFillHeart className="reactBtnIcon text-[#FF69B4]" />
-              </button>
-            ) : (
-              <button onClick={() => postLike()} className="reactBtn">
+              ) : (
                 <AiOutlineHeart className="reactBtnIcon" />
-              </button>
-            )}
+              )}
+            </button>
             {/* comment button */}
             <button
+              aria-label="Comment on the post"
               className="reactBtn"
               onClick={() => {
                 isMb
@@ -252,12 +255,16 @@ const Post = ({
               <TbMessageCircle2 className="reactBtnIcon" />
             </button>
             {/* share button */}
-            <button className="reactBtn">
+            <button aria-label="Share the post" className="reactBtn">
               <FiSend className="w-7 h-7 rotate-[18deg]" />
             </button>
           </div>
           {/* save button */}
-          <button onClick={savePost} className="reactBtn">
+          <button
+            aria-label="Save post"
+            onClick={savePost}
+            className="reactBtn"
+          >
             {hasSaved ? (
               <RiBookmark3Fill className="reactBtnIcon text-instaBlue" />
             ) : (
@@ -316,14 +323,16 @@ const Post = ({
         </div>
 
         {/* Input box */}
-        <form
-          className={styles.comment_form}
-          onSubmit={(e) => postComment(e)}
-        >
-          <button type="button" onClick={() => setShowPicker(true)}>
+        <form className={styles.comment_form} onSubmit={(e) => postComment(e)}>
+          <button
+            aria-label="Select emoticons"
+            type="button"
+            onClick={() => setShowPicker(true)}
+          >
             <BsEmojiSmile className="w-6 h-6" />
           </button>
           <input
+            aria-label="Write comment"
             className="flex-1 text-[100%] focus:ring-0 border-none outline-none placeholder:font-[600] placeholder:text-gray-400"
             type="text"
             name="comment"
