@@ -102,7 +102,7 @@ function SignIn({
           </div>
           <div className="mt-10">
             <a
-              href="https://github.com/dorji-tshering/ig-clone"
+              href="https://github.com/dorji-dev/ig-clone"
               target="_blank"
               className="text-gray-600 w-fit mx-auto flex items-center justify-center hover:text-instaBlue hover:underline"
             >
@@ -119,7 +119,7 @@ function SignIn({
           By{" "}
           <a
             className="text-gray-700 underline"
-            href="https://dorji-dev.vercel.app"
+            href="https://portfolio-dorji-tsherings-projects.vercel.app/"
             target="_blank"
           >
             Dorji Tshering

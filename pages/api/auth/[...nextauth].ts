@@ -7,12 +7,13 @@ export const authOptions: NextAuthOptions = {
   // Configure one or more authentication providers
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      clientId: process.env.GOOGLE_AUTH_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_AUTH_CLIENT_SECRET as string,
     }),
     TwitterProvider({
-      clientId: process.env.TWITTER_CONSUMER_KEY as string,
-      clientSecret: process.env.TWITTER_CONSUMER_SECRET as string,
+      clientId: process.env.TWITTER_AUTH_CONSUMER_KEY as string,
+      clientSecret: process.env.TWITTER_AUTH_CONSUMER_SECRET as string,
+      version: '2.0'
     }),
     // ...add more providers here
   ],

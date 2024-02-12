@@ -30,7 +30,7 @@ const Home = () => {
       setLoading(true);
       let usernameExists = true;
       while (usernameExists) {
-        const newUsername = generateFromEmail(session.user.email as string);
+        const newUsername = session.user.email ? generateFromEmail(session.user.email as string) : session.user.name;
         const user = await getDocs(
           query(collection(db, "users"), where("username", "==", newUsername))
         );
@@ -47,7 +47,7 @@ const Home = () => {
             },
             { merge: true }
           );
-          session.user.username = newUsername;
+          session.user.username = newUsername as string;
           usernameExists = false;
           reloadSession(); // get the updated session session
           setLoading(false);
