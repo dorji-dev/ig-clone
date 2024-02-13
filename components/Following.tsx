@@ -90,7 +90,7 @@ const Following = ({ onClose, userId, onModal = false }: Props) => {
 
   return (
     <div
-      className={`mb-6 ${!onModal && "mt-6 rounded-lg shadow-mainShadow bg-white pb-5"} md:w-[500px] text-center`}
+      className={`mb-6 ${!onModal && "md:mt-5 rounded-lg shadow-mainShadow bg-white pb-5"} md:w-[500px] text-center`}
     >
       <div
         className={`h-[50px] px-4 bg-white border-b sticky ${onModal ? "top-0" : "top-[53px] md:rounded-tr-lg md:rounded-tl-lg"}`}

@@ -40,7 +40,7 @@ const Layout = ({ children }: { children: ReactElement }) => {
   return (
     <main className="flex flex-col">
       {session && <Header />}
-      <div className="min-h-[54px]"></div>
+      <div className="min-h-[64px]"></div>
       <div className="grow">{children}</div>
       {session && !router.query.chatId && <MobileBottomNav />}
       <PostUploadModal />
