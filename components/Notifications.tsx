@@ -79,7 +79,7 @@ const Notifications = ({
     <div className={`md:max-w-[500px]`}>
       {/* header section */}
       <section
-        className={`h-[50px] px-5 border-b sticky ${onModal ? "top-0" : "top-[53px]"}
+        className={`h-[50px] px-5 border-b sticky ${onModal ? "top-0" : "top-[64px]"}
                 bg-white`}
       >
         <div className="h-full float-left flex items-center relative z-10">

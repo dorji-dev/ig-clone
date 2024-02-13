@@ -59,27 +59,20 @@ function SignIn({
 
   return (
     <>
-      <div
-        className="flex justify-center items-center flex-col h-full overflow-y-auto 
-                px-5 text-center py-10"
-      >
+      <div className="flex justify-center items-center flex-col h-full overflow-y-auto px-5 text-center py-10">
         <div className="bg-white rounded-lg shadow-mainShadow px-5 py-8 sm:p-14">
           <img
             className="w-40 mx-auto"
             src="/images/instagram-logo.png"
             alt="Instagram logo"
           />
-          <p className="text-sm text-gray-500 mt-3">
-            This is not a <span className="text-black font-[500]">REAL</span>{" "}
-            app, it is built for educational purposes only
-          </p>
           <h2 className="text-sm mt-5 font-bold text-gray-400">SIGN IN</h2>
           <div className="mt-4 border rounded-lg px-5 py-5 w-full sm:max-w-[400px] sm:mx-auto">
             {Object.values(providers).map((provider) => (
               <div key={provider.name} className="first:mb-4">
                 <button
-                  className="py-3 border rounded-lg font-[500] w-full flex items-center justify-center
-                                    text-gray-700 hover:border-gray-400 transition-all duration-500"
+                  className="py-3 border rounded-lg font-[500] w-full flex items-center justify-center text-gray-700
+                   hover:border-gray-400 transition-all duration-500 px-5"
                   onClick={() =>
                     SignIntoProvider(provider.id, { callbackUrl: "/" })
                   }

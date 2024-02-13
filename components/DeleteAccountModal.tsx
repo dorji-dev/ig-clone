@@ -122,7 +122,7 @@ const DeleteAccountModal = () => {
         <div className="flex flex-col">
           <div className="py-5 border-b">
             <h1 className="font-bold text-lg mb-2">Confirm account delete?</h1>
-            <p className="max-w-[400px] text-sm text-gray-400 px-5">
+            <p className="max-w-[400px] mx-auto text-sm text-gray-400 px-5">
               Your posts, comments, followers, and all the data associated with
               the current account will be deleted.
             </p>
